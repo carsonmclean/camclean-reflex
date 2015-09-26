@@ -7,4 +7,8 @@
     <string name="two_player">2 Player Competitive</string>
     <string name="three_player">3 Player Competitive</string>
     <string name="four_player">4 Player Competitive</string>
+    <string name="title_activity_single_player">SinglePlayer</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
 </resources>
