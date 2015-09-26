@@ -1,6 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">camclean-reflex</string>
 
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="welcome_message">Welcome!\nReaction timer app!</string>
+    <string name="one_player">Single Player Practice Mode</string>
+    <string name="two_player">2 Player Competitive</string>
+    <string name="three_player">3 Player Competitive</string>
+    <string name="four_player">4 Player Competitive</string>
 </resources>
