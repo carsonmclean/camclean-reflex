@@ -12,7 +12,8 @@
     <string name="action_settings">Settings</string>
 
     <string name="single_player_dialog_title">Single Player Instructions</string>
-    <string name="single_player_dialog_body">Practice your reaction time! Tap as fast as you can after the button changes color!
+    <string name="single_player_dialog_body">
+        Practice your reaction time! Tap as fast as you can after the button changes color!
     </string>
     <string name="single_player_dialog_go_back">Go Back</string>
     <string name="single_player_dialog_okay">Okay</string>

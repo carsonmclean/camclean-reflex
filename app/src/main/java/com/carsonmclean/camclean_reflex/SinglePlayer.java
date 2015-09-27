@@ -9,7 +9,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
+
+import java.util.Random;
 
 // Sources:
 // http://developer.android.com/guide/topics/ui/dialogs.html
@@ -20,9 +23,10 @@ public class SinglePlayer extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_single_player);
+
         DialogFragment newFragment = new InformationDialogFragment();
         // http://stackoverflow.com/questions/8993348/cannot-convert-from-android-support-v4-app-fragment-to-android-app-fragment
-        newFragment.show(getFragmentManager(),"info");
+        newFragment.show(getFragmentManager(), "info");
     }
 
     @Override
@@ -46,6 +50,26 @@ public class SinglePlayer extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void startSinglePlayer() {
+        // http://stackoverflow.com/questions/1877417/how-to-set-a-timer-in-android
+        Random random = new Random();
+        Handler handler = new Handler();
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                findViewById(R.id.button5).setBackgroundColor(0xff7625f8);
+                Toast.makeText(SinglePlayer.this, "Random delay complete", Toast.LENGTH_SHORT).show();
+            }
+        };
+        handler.postDelayed(runnable, random.nextInt(1990) + 10);
+
+    }
+
+    public void buttonClick(View view) {
+        Toast.makeText(SinglePlayer.this, "Click works", Toast.LENGTH_SHORT).show();
+    }
+
     public class InformationDialogFragment extends DialogFragment {
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -62,16 +86,7 @@ public class SinglePlayer extends AppCompatActivity {
             builder.setPositiveButton(R.string.single_player_dialog_okay, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
                     // User wants to go play
-                    // http://stackoverflow.com/questions/1877417/how-to-set-a-timer-in-android
-
-                    Handler handler = new Handler();
-                    Runnable runnable = new Runnable() {
-                        @Override
-                        public void run() {
-                            Toast.makeText(SinglePlayer.this,"TEST",Toast.LENGTH_SHORT).show();
-                        }
-                    };
-                    handler.postDelayed(runnable,10000);
+                    startSinglePlayer();
                 }
             });
 

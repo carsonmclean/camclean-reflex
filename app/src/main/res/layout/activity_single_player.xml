@@ -6,17 +6,15 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.carsonmclean.camclean_reflex.SinglePlayer">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <!-- http://stackoverflow.com/questions/3882064/how-to-change-color-of-button-in-android-when-clicked-->
-        <ImageButton
-            android:layout_width="564dp"
-            android:layout_height="496dp"
-            android:id="@+id/imageButton"
-            android:background="#FF0000"
-            android:layout_margin="5dp"
-            android:clickable="true" />
-    </FrameLayout>
+    <!-- http://stackoverflow.com/questions/3882064/how-to-change-color-of-button-in-android-when-clicked-->
+    <!-- http://stackoverflow.com/questions/3024983/how-do-i-change-the-tint-of-an-imagebutton-on-focus-press-->
+    <Button
+        android:layout_width="339dp"
+        android:layout_height="498dp"
+        android:id="@+id/button5"
+        android:layout_gravity="left|top"
+        android:layout_margin="5dp"
+        android:onClick="buttonClick"
+        android:background="#FF0000" />
 
 </RelativeLayout>
