@@ -4,7 +4,9 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
+import android.os.CountDownTimer;
 import android.os.Handler;
+import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.format.Time;
@@ -58,25 +60,28 @@ public class SinglePlayer extends AppCompatActivity {
     public void startSinglePlayer() {
         // http://stackoverflow.com/questions/1877417/how-to-set-a-timer-in-android
         Random random = new Random();
-        Handler handler = new Handler();
-        Runnable runnable = new Runnable() {
+//        new CountDownTimer((long)random.nextInt(1990), 1000) {
+        CountDownTimer countDownTimer = new CountDownTimer(10000, 1000) {
             @Override
-            public void run() {
+            public void onTick(long millisUntilFinished) {
+
+            }
+            @Override
+            public void onFinish() {
                 findViewById(R.id.button5).setBackgroundColor(0xff080000);
                 timerFinished = true;
-                //Toast.makeText(SinglePlayer.this, "Random delay complete", Toast.LENGTH_SHORT).show();
+                startTime = SystemClock.elapsedRealtime();
             }
         };
-        handler.postDelayed(runnable, random.nextInt(1990) + 10);
-        startTime = System.nanoTime();
+        countDownTimer.start();
 
     }
 
     public void buttonClick(View view) {
         //Toast.makeText(SinglePlayer.this, "Click works", Toast.LENGTH_SHORT).show();
-        endTime = System.nanoTime();
+        endTime = SystemClock.elapsedRealtime();
         if (timerFinished) {
-            long reactionTime = (endTime - startTime)/1000000;
+            long reactionTime = (endTime - startTime);
             Toast.makeText(SinglePlayer.this,"Your time was " + reactionTime + " milliseconds", Toast.LENGTH_LONG).show();
         } else {
             Toast.makeText(SinglePlayer.this, "Too fast!", Toast.LENGTH_SHORT).show();
