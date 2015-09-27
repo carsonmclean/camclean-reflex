@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.format.Time;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,6 +19,9 @@ import java.util.Random;
 // http://developer.android.com/guide/topics/ui/dialogs.html
 
 public class SinglePlayer extends AppCompatActivity {
+
+    Boolean timerFinished = false; // Has the random wait time ran out yet?
+    long startTime, endTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,16 +62,25 @@ public class SinglePlayer extends AppCompatActivity {
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
-                findViewById(R.id.button5).setBackgroundColor(0xff7625f8);
-                Toast.makeText(SinglePlayer.this, "Random delay complete", Toast.LENGTH_SHORT).show();
+                findViewById(R.id.button5).setBackgroundColor(0xff080000);
+                timerFinished = true;
+                //Toast.makeText(SinglePlayer.this, "Random delay complete", Toast.LENGTH_SHORT).show();
             }
         };
         handler.postDelayed(runnable, random.nextInt(1990) + 10);
+        startTime = System.nanoTime();
 
     }
 
     public void buttonClick(View view) {
-        Toast.makeText(SinglePlayer.this, "Click works", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(SinglePlayer.this, "Click works", Toast.LENGTH_SHORT).show();
+        endTime = System.nanoTime();
+        if (timerFinished) {
+            long reactionTime = (endTime - startTime)/1000000;
+            Toast.makeText(SinglePlayer.this,"Your time was " + reactionTime + " milliseconds", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(SinglePlayer.this, "Too fast!", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public class InformationDialogFragment extends DialogFragment {
@@ -86,6 +99,7 @@ public class SinglePlayer extends AppCompatActivity {
             builder.setPositiveButton(R.string.single_player_dialog_okay, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
                     // User wants to go play
+                    // http://stackoverflow.com/questions/4934333/android-how-to-count-time-over-a-long-period
                     startSinglePlayer();
                 }
             });
