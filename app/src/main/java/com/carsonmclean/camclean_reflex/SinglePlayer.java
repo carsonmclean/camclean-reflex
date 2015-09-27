@@ -23,17 +23,6 @@ public class SinglePlayer extends AppCompatActivity {
         DialogFragment newFragment = new InformationDialogFragment();
         // http://stackoverflow.com/questions/8993348/cannot-convert-from-android-support-v4-app-fragment-to-android-app-fragment
         newFragment.show(getFragmentManager(),"info");
-        // http://stackoverflow.com/questions/1877417/how-to-set-a-timer-in-android
-        Handler handler = new Handler();
-        Runnable runnable = new Runnable() {
-            @Override
-            public void run() {
-                Toast.makeText(SinglePlayer.this,"TEST",Toast.LENGTH_SHORT).show();
-            }
-        };
-
-        //handler.postAtTime(runnable, System.currentTimeMillis()+1000);
-        handler.postDelayed(runnable, 1000);
     }
 
     @Override
@@ -73,7 +62,16 @@ public class SinglePlayer extends AppCompatActivity {
             builder.setPositiveButton(R.string.single_player_dialog_okay, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
                     // User wants to go play
-                    Toast.makeText(SinglePlayer.this,"After clicking the button",Toast.LENGTH_LONG).show();
+                    // http://stackoverflow.com/questions/1877417/how-to-set-a-timer-in-android
+
+                    Handler handler = new Handler();
+                    Runnable runnable = new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(SinglePlayer.this,"TEST",Toast.LENGTH_SHORT).show();
+                        }
+                    };
+                    handler.postDelayed(runnable,10000);
                 }
             });
 
