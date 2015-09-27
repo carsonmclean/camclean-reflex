@@ -61,14 +61,14 @@ public class SinglePlayer extends AppCompatActivity {
         // http://stackoverflow.com/questions/1877417/how-to-set-a-timer-in-android
         Random random = new Random();
 //        new CountDownTimer((long)random.nextInt(1990), 1000) {
-        CountDownTimer countDownTimer = new CountDownTimer(10000, 1000) {
+        CountDownTimer countDownTimer = new CountDownTimer(1000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
 
             }
             @Override
             public void onFinish() {
-                findViewById(R.id.button5).setBackgroundColor(0xff080000);
+                findViewById(R.id.button5).setBackgroundColor(0xff008000);
                 timerFinished = true;
                 startTime = SystemClock.elapsedRealtime();
             }
@@ -84,7 +84,8 @@ public class SinglePlayer extends AppCompatActivity {
             long reactionTime = (endTime - startTime);
             Toast.makeText(SinglePlayer.this,"Your time was " + reactionTime + " milliseconds", Toast.LENGTH_LONG).show();
         } else {
-            Toast.makeText(SinglePlayer.this, "Too fast!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(SinglePlayer.this, "Too fast!\nRestarting timer", Toast.LENGTH_SHORT).show();
+            startSinglePlayer();
         }
     }
 
