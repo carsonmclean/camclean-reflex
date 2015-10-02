@@ -5,11 +5,9 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.os.CountDownTimer;
-import android.os.Handler;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.format.Time;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,7 +18,7 @@ import java.util.Random;
 // Sources:
 // http://developer.android.com/guide/topics/ui/dialogs.html
 
-public class SinglePlayer extends AppCompatActivity {
+public class SinglePlayerActivity extends AppCompatActivity {
 
     Boolean timerFinished = false; // Has the random wait time ran out yet?
     long startTime, endTime;
@@ -78,13 +76,13 @@ public class SinglePlayer extends AppCompatActivity {
     }
 
     public void buttonClick(View view) {
-        //Toast.makeText(SinglePlayer.this, "Click works", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(SinglePlayerActivity.this, "Click works", Toast.LENGTH_SHORT).show();
         endTime = SystemClock.elapsedRealtime();
         if (timerFinished) {
             long reactionTime = (endTime - startTime);
-            Toast.makeText(SinglePlayer.this,"Your time was " + reactionTime + " milliseconds", Toast.LENGTH_LONG).show();
+            Toast.makeText(SinglePlayerActivity.this,"Your time was " + reactionTime + " milliseconds", Toast.LENGTH_LONG).show();
         } else {
-            Toast.makeText(SinglePlayer.this, "Too fast!\nRestarting timer", Toast.LENGTH_SHORT).show();
+            Toast.makeText(SinglePlayerActivity.this, "Too fast!\nRestarting timer", Toast.LENGTH_SHORT).show();
             startSinglePlayer();
         }
     }
