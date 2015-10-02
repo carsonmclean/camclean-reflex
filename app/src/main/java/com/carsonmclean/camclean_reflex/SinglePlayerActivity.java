@@ -17,6 +17,9 @@ public class SinglePlayerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_single_player);
 
+        DialogFragment dialogFragment = new InformationDialogFragment();
+        dialogFragment.show(getFragmentManager(), "info");
+
     }
 
     @Override
