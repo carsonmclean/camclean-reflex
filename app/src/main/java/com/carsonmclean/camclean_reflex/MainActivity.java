@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
     // http://developer.android.com/training/basics/firstapp/starting-activity.html
     public void startSinglePlayer(View view) {
-        Intent intent = new Intent(this, SinglePlayer.class);
+        Intent intent = new Intent(this, SinglePlayerActivity.class);
         startActivity(intent);
     }
 }

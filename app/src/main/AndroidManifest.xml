@@ -17,8 +17,40 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SinglePlayer"
+            android:name=".SinglePlayerActivity"
             android:label="@string/title_activity_single_player"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.carsonmclean.camclean_reflex.MainActivity" />
+        </activity>
+        <activity
+            android:name=".TwoPlayerActivity"
+            android:label="@string/title_activity_two_player"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.carsonmclean.camclean_reflex.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ThreePlayerActivity"
+            android:label="@string/title_activity_three_player"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.carsonmclean.camclean_reflex.MainActivity" />
+        </activity>
+        <activity
+            android:name=".FourPlayerActivity"
+            android:label="@string/title_activity_four_player"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.carsonmclean.camclean_reflex.MainActivity" />
+        </activity>
+        <activity
+            android:name=".StatisticsActivity"
+            android:label="@string/title_activity_statistics"
             android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
