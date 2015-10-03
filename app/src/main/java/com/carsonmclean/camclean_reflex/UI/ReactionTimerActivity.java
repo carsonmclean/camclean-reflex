@@ -21,7 +21,7 @@ public class ReactionTimerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_reaction_timer);
 
         // http://stackoverflow.com/questions/16636752/android-button-onclicklistener
-        final Button button = (Button) findViewById(R.id.button);
+        final Button button = (Button) findViewById(R.id.button); // TODO: Start button as a color?
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 reactionTimerGame.onClick();
@@ -30,9 +30,7 @@ public class ReactionTimerActivity extends AppCompatActivity {
 
         reactionTimerGame = new ReactionTimerGame(messagePasser,button);
 
-        messagePasser.createDialog("Instructions", "When the button changes color, click as fast as you can!\n\nPress the back button to quit.");
-
-        reactionTimerGame.startGame();
+        messagePasser.createDialog("Instructions", "Click the button to start.\n\nClick as fast as you can when the color changes\n\nPress the back button to quit.");
     }
 
     @Override

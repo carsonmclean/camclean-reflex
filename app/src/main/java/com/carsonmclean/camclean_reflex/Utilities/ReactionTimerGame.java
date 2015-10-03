@@ -14,6 +14,7 @@ public class ReactionTimerGame {
     MessagePasser messagePasser;
     Button button;
     long startTime, reactionTime;
+    boolean gameRunning;
 
 
     // Constructor
@@ -21,22 +22,31 @@ public class ReactionTimerGame {
         this.messagePasser = messagePasser;
         this.button = button;
 
+        this.startTime = 0;
     }
 
     public void onClick() {
         reactionTime = (SystemClock.elapsedRealtime() - startTime);
-        buttonColor(button, 0xff000000);
-        // Want to send message back to Activity, need object to pass message
-        messagePasser.createToast("Your reaction time was " + reactionTime + " milliseconds.");
+        if (gameRunning) {
+            gameRunning = false;
+            if (startTime == 0) {
+                messagePasser.createToast("Too early!");
+            } else {
+                messagePasser.createToast("Your reaction time was " + reactionTime + " milliseconds.");
+            }
+        } else { //  Game not running yet
+            startGame();
+        }
+        buttonColor(button, 0xff000000); // BLACK
     }
 
     public void startGame() {
-        buttonColor(button, 0xffff0000);
+        buttonColor(button, 0xffff0000); // RED
         Timer timer = new Timer();
         TimerTask timerTask = new TimerTask() {
             @Override
             public void run() {
-                buttonColor(button,0xff00ff00);
+                buttonColor(button,0xff00ff00); // GREEN
                 startTime = SystemClock.elapsedRealtime();
             }
         };
