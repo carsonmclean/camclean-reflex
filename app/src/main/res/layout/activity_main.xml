@@ -22,7 +22,7 @@
         android:text="2 Player Gameshow Buzzer"
         android:id="@+id/button3"
         android:layout_gravity="center_horizontal"
-        android:onClick="startReactionTimer"
+        android:onClick="startTwoPlayer"
         android:layout_marginTop="40dp"
         android:layout_below="@+id/button2"
         android:layout_centerHorizontal="true" />
@@ -33,7 +33,7 @@
         android:text="3 Player Gameshow Buzzer"
         android:id="@+id/button4"
         android:layout_gravity="center_horizontal"
-        android:onClick="startReactionTimer"
+        android:onClick="startThreePlayer"
         android:layout_below="@+id/button3"
         android:layout_centerHorizontal="true" />
 
@@ -43,7 +43,7 @@
         android:text="4 Player Gameshow Buzzer"
         android:id="@+id/button5"
         android:layout_gravity="center_horizontal"
-        android:onClick="startReactionTimer"
+        android:onClick="startFourPlayer"
         android:layout_below="@+id/button4"
         android:layout_centerHorizontal="true" />
 

@@ -20,6 +20,30 @@
             android:name=".UI.ReactionTimerActivity"
             android:label="@string/title_activity_reaction_timer" >
         </activity>
+        <activity
+            android:name=".UI.TwoPlayerActivity"
+            android:label="@string/title_activity_two_player"
+            android:parentActivityName=".UI.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.carsonmclean.camclean_reflex.UI.MainActivity" />
+        </activity>
+        <activity
+            android:name=".UI.ThreePlayerActivity"
+            android:label="@string/title_activity_three_player"
+            android:parentActivityName=".UI.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.carsonmclean.camclean_reflex.UI.MainActivity" />
+        </activity>
+        <activity
+            android:name=".UI.FourPlayerActivity"
+            android:label="@string/title_activity_four_player"
+            android:parentActivityName=".UI.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.carsonmclean.camclean_reflex.UI.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

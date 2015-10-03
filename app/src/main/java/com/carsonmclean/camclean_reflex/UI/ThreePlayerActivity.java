@@ -1,26 +1,24 @@
 package com.carsonmclean.camclean_reflex.UI;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.carsonmclean.camclean_reflex.R;
 
-public class MainActivity extends AppCompatActivity {
+public class ThreePlayerActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_three_player);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_three_player, menu);
         return true;
     }
 
@@ -32,27 +30,10 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    public void startReactionTimer(View view) {
-        Intent intent = new Intent(this,ReactionTimerActivity.class);
-        startActivity(intent);
-    }
-
-    public void startTwoPlayer(View view) {
-        Intent intent = new Intent(this,TwoPlayerActivity.class);
-        startActivity(intent);
-    }
-
-    public void startThreePlayer(View view) {
-        Intent intent = new Intent(this,ThreePlayerActivity.class);
-        startActivity(intent);
-    }
-
-    public void startFourPlayer(View view) {
-        Intent intent = new Intent(this,FourPlayerActivity.class);
-        startActivity(intent);
     }
 }
