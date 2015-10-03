@@ -10,27 +10,20 @@ import android.view.View;
 import android.widget.Button;
 
 import com.carsonmclean.camclean_reflex.R;
+import com.carsonmclean.camclean_reflex.Utilities.DialogPasser;
 import com.carsonmclean.camclean_reflex.Utilities.ReactionTimerGame;
 
 public class ReactionTimerActivity extends AppCompatActivity {
     private ReactionTimerGame reactionTimerGame = new ReactionTimerGame(); // TODO: Use the constructor
+    private DialogPasser dialogPasser = new DialogPasser(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reaction_timer);
 
-        // http://stackoverflow.com/questions/2115758/how-to-display-alert-dialog-in-android
-        AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
-        alertDialog.setTitle("Reaction Timer Game");
-        alertDialog.setMessage("When the button changes color, click as fast as you can!");
-        alertDialog.setPositiveButton("Continue", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
+        dialogPasser.createDialog("Instructions","When the button changes color, click as fast as you can!");
 
-            }
-        });
-        alertDialog.show();
 
         // http://stackoverflow.com/questions/16636752/android-button-onclicklistener
         final Button button = (Button) findViewById(R.id.button);

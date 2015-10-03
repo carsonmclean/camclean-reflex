@@ -16,6 +16,7 @@ public class ReactionTimerGame {
     public void onClick() {
         System.out.println("On click worked!");
         reactionTime = (SystemClock.elapsedRealtime() - startTime);
+        // Want to send message back to Activity, need object to pass message
     }
 
     public void startGame() {
