@@ -1,5 +1,6 @@
 package com.carsonmclean.camclean_reflex.Utilities;
 
+import android.os.Handler;
 import android.os.SystemClock;
 import android.widget.Button;
 
@@ -42,15 +43,25 @@ public class ReactionTimerGame {
 
     public void startGame() {
         buttonColor(button, 0xffff0000); // RED
-        Timer timer = new Timer();
-        TimerTask timerTask = new TimerTask() {
+        // http://www.mopri.de/2010/timertask-bad-do-it-the-android-way-use-a-handler/
+        Handler handler = new Handler();
+        Runnable runnable = new Runnable() {
             @Override
             public void run() {
                 buttonColor(button,0xff00ff00); // GREEN
                 startTime = SystemClock.elapsedRealtime();
             }
         };
-        timer.schedule(timerTask, getRandomNumber());
+        handler.postDelayed(runnable,getRandomNumber());
+//        Timer timer = new Timer();
+//        TimerTask timerTask = new TimerTask() {
+//            @Override
+//            public void run() {
+//                buttonColor(button,0xff00ff00); // GREEN
+//                startTime = SystemClock.elapsedRealtime();
+//            }
+//        };
+//        timer.schedule(timerTask, getRandomNumber());
     }
 
     // http://stackoverflow.com/questions/363681/generating-random-integers-in-a-range-with-java
