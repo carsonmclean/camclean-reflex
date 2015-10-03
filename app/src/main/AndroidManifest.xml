@@ -20,14 +20,6 @@
             android:name=".UI.ReactionTimerActivity"
             android:label="@string/title_activity_reaction_timer" >
         </activity>
-        <activity
-            android:name=".Utilities.ReactionTimerGame"
-            android:label="@string/title_activity_reaction_timer_game"
-            android:parentActivityName=".UI.MainActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.carsonmclean.camclean_reflex.UI.MainActivity" />
-        </activity>
     </application>
 
 </manifest>
