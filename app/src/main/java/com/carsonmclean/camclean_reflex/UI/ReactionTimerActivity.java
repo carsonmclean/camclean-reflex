@@ -14,7 +14,7 @@ import com.carsonmclean.camclean_reflex.Utilities.DialogPasser;
 import com.carsonmclean.camclean_reflex.Utilities.ReactionTimerGame;
 
 public class ReactionTimerActivity extends AppCompatActivity {
-    private ReactionTimerGame reactionTimerGame = new ReactionTimerGame(); // TODO: Use the constructor
+    private ReactionTimerGame reactionTimerGame;
     private DialogPasser dialogPasser = new DialogPasser(this);
 
     @Override
@@ -22,14 +22,15 @@ public class ReactionTimerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reaction_timer);
 
-        dialogPasser.createDialog("Instructions","When the button changes color, click as fast as you can!");
+        reactionTimerGame = new ReactionTimerGame(dialogPasser);
+
+        dialogPasser.createDialog("Instructions","When the button changes color, click as fast as you can!\n\nPress the back button to quit.");
 
 
         // http://stackoverflow.com/questions/16636752/android-button-onclicklistener
         final Button button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                System.out.println("Got here");
                 reactionTimerGame.onClick();
             }
         });
