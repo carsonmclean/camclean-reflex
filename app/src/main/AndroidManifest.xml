@@ -56,6 +56,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.carsonmclean.camclean_reflex.MainActivity" />
         </activity>
+        <activity
+            android:name=".ResultsActivity"
+            android:label="@string/title_activity_results"
+            android:parentActivityName=".SinglePlayerActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.carsonmclean.camclean_reflex.SinglePlayerActivity" />
+        </activity>
     </application>
 
 </manifest>

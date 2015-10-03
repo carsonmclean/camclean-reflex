@@ -23,5 +23,6 @@
     <string name="title_activity_three_player">ThreePlayerActivity</string>
     <string name="title_activity_four_player">FourPlayerActivity</string>
     <string name="title_activity_statistics">StatisticsActivity</string>
+    <string name="title_activity_results">ResultsActivity</string>
 
 </resources>
