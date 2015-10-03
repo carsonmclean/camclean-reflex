@@ -15,34 +15,34 @@ public class ReactionTimerGame {
     MessagePasser messagePasser;
     Button button;
     long startTime, reactionTime;
-    boolean gameRunning;
+    boolean gameRunning, validClick;
 
 
     // Constructor
     public ReactionTimerGame(MessagePasser messagePasser, Button button) {
         this.messagePasser = messagePasser;
         this.button = button;
-
-        this.startTime = 0;
     }
 
     public void onClick() {
         reactionTime = (SystemClock.elapsedRealtime() - startTime);
         if (gameRunning) {
             gameRunning = false;
-            if (startTime == 0) {
-                messagePasser.createToast("Too early!");
-            } else {
+            if (!validClick) { // Clicked before color change
+                messagePasser.createToast("Too early!"); //  TODO: Cancel the timer and color change. ie, go to break state
+            } else { // Good reaction time
                 messagePasser.createToast("Your reaction time was " + reactionTime + " milliseconds.");
             }
-        } else { //  Game not running yet
+        } else { // Game not running, start the game. Gives break between rounds.
+            validClick = false;
             startGame();
         }
-        buttonColor(button, 0xff000000); // BLACK
     }
 
     public void startGame() {
         buttonColor(button, 0xffff0000); // RED
+        gameRunning = true;
+
         // http://www.mopri.de/2010/timertask-bad-do-it-the-android-way-use-a-handler/
         Handler handler = new Handler();
         Runnable runnable = new Runnable() {
@@ -50,18 +50,10 @@ public class ReactionTimerGame {
             public void run() {
                 buttonColor(button,0xff00ff00); // GREEN
                 startTime = SystemClock.elapsedRealtime();
+                validClick = true;
             }
         };
         handler.postDelayed(runnable,getRandomNumber());
-//        Timer timer = new Timer();
-//        TimerTask timerTask = new TimerTask() {
-//            @Override
-//            public void run() {
-//                buttonColor(button,0xff00ff00); // GREEN
-//                startTime = SystemClock.elapsedRealtime();
-//            }
-//        };
-//        timer.schedule(timerTask, getRandomNumber());
     }
 
     // http://stackoverflow.com/questions/363681/generating-random-integers-in-a-range-with-java
