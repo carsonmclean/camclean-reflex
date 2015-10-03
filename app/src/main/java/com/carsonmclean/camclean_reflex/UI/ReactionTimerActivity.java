@@ -1,5 +1,7 @@
 package com.carsonmclean.camclean_reflex.UI;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -13,6 +15,20 @@ public class ReactionTimerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reaction_timer);
+
+        // http://stackoverflow.com/questions/2115758/how-to-display-alert-dialog-in-android
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+        alertDialog.setTitle("Reaction Timer Game");
+        alertDialog.setMessage("When the button changes color, click as fast as you can!");
+        alertDialog.setPositiveButton("Continue", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        alertDialog.show();
+
+
     }
 
     @Override
