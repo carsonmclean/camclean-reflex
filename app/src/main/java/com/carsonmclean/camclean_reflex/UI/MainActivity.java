@@ -1,9 +1,11 @@
-package com.carsonmclean.camclean_reflex;
+package com.carsonmclean.camclean_reflex.UI;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.carsonmclean.camclean_reflex.R;
 
 public class MainActivity extends AppCompatActivity {
 
