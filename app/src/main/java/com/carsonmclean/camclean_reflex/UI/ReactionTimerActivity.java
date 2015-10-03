@@ -22,11 +22,6 @@ public class ReactionTimerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reaction_timer);
 
-        reactionTimerGame = new ReactionTimerGame(dialogPasser);
-
-        dialogPasser.createDialog("Instructions","When the button changes color, click as fast as you can!\n\nPress the back button to quit.");
-
-
         // http://stackoverflow.com/questions/16636752/android-button-onclicklistener
         final Button button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
@@ -34,6 +29,10 @@ public class ReactionTimerActivity extends AppCompatActivity {
                 reactionTimerGame.onClick();
             }
         });
+
+        reactionTimerGame = new ReactionTimerGame(dialogPasser,button);
+
+        dialogPasser.createDialog("Instructions", "When the button changes color, click as fast as you can!\n\nPress the back button to quit.");
 
         reactionTimerGame.startGame();
     }
