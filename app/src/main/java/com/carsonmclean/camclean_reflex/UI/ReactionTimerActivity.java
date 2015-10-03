@@ -1,7 +1,5 @@
 package com.carsonmclean.camclean_reflex.UI;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -10,12 +8,12 @@ import android.view.View;
 import android.widget.Button;
 
 import com.carsonmclean.camclean_reflex.R;
-import com.carsonmclean.camclean_reflex.Utilities.DialogPasser;
+import com.carsonmclean.camclean_reflex.Utilities.MessagePasser;
 import com.carsonmclean.camclean_reflex.Utilities.ReactionTimerGame;
 
 public class ReactionTimerActivity extends AppCompatActivity {
     private ReactionTimerGame reactionTimerGame;
-    private DialogPasser dialogPasser = new DialogPasser(this);
+    private MessagePasser messagePasser = new MessagePasser(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +28,9 @@ public class ReactionTimerActivity extends AppCompatActivity {
             }
         });
 
-        reactionTimerGame = new ReactionTimerGame(dialogPasser,button);
+        reactionTimerGame = new ReactionTimerGame(messagePasser,button);
 
-        dialogPasser.createDialog("Instructions", "When the button changes color, click as fast as you can!\n\nPress the back button to quit.");
+        messagePasser.createDialog("Instructions", "When the button changes color, click as fast as you can!\n\nPress the back button to quit.");
 
         reactionTimerGame.startGame();
     }
