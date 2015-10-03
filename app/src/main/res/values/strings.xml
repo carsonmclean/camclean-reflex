@@ -2,10 +2,10 @@
     <string name="app_name">camclean-reflex</string>
 
     <string name="title_activity_reaction_timer">Reaction Timer</string>
-    <string name="title_activity_two_player">TwoPlayerActivity</string>
 
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_three_player">ThreePlayerActivity</string>
-    <string name="title_activity_four_player">FourPlayerActivity</string>
+
+    <string name="title_activity_two_player">Two Player Game Show Buzzer</string>
+    <string name="title_activity_three_player">Three Player Game Show Buzzer</string>
+    <string name="title_activity_four_player">Four Player Game Show Buzzer</string>
 </resources>
