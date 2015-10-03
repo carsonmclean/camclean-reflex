@@ -40,6 +40,8 @@ public class ReactionTimerActivity extends AppCompatActivity {
                 reactionTimerGame.onClick();
             }
         });
+
+        reactionTimerGame.startGame();
     }
 
     @Override
