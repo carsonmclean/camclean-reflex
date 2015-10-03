@@ -6,10 +6,55 @@
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="300dip"
         android:layout_height="wrap_content"
         android:text="Reaction Timer Game"
         android:id="@+id/button2"
         android:layout_gravity="center_horizontal"
-        android:onClick="startReactionTimer" />
+        android:onClick="startReactionTimer"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp" />
+
+    <Button
+        android:layout_width="300dip"
+        android:layout_height="wrap_content"
+        android:text="2 Player Gameshow Buzzer"
+        android:id="@+id/button3"
+        android:layout_gravity="center_horizontal"
+        android:onClick="startReactionTimer"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/button2"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="300dip"
+        android:layout_height="wrap_content"
+        android:text="3 Player Gameshow Buzzer"
+        android:id="@+id/button4"
+        android:layout_gravity="center_horizontal"
+        android:onClick="startReactionTimer"
+        android:layout_below="@+id/button3"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="300dip"
+        android:layout_height="wrap_content"
+        android:text="4 Player Gameshow Buzzer"
+        android:id="@+id/button5"
+        android:layout_gravity="center_horizontal"
+        android:onClick="startReactionTimer"
+        android:layout_below="@+id/button4"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="300dip"
+        android:layout_height="wrap_content"
+        android:text="Statistics"
+        android:id="@+id/button6"
+        android:layout_gravity="center_horizontal"
+        android:onClick="startReactionTimer"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp" />
 </RelativeLayout>
