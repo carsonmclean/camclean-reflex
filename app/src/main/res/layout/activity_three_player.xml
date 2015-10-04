@@ -46,7 +46,8 @@
             android:layout_weight="1"
             android:onClick="onClick3"
             android:text="Player 3"
-            android:textSize="50dp"/>
+            android:textSize="50dp"
+            android:background="#889ba28f" />
     </LinearLayout>
 
 </RelativeLayout>
