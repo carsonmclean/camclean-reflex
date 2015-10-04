@@ -17,6 +17,18 @@ public class ReactionTimerGame {
     long startTime, reactionTime;
     boolean gameRunning, validClick;
 
+    // http://www.mopri.de/2010/timertask-bad-do-it-the-android-way-use-a-handler/
+    Handler handler = new Handler();
+    Runnable runnable = new Runnable() {
+        @Override
+        public void run() {
+            buttonColor(button,0xff00ff00); // GREEN
+            buttonMessage(button,"Click!");
+            startTime = SystemClock.elapsedRealtime();
+            validClick = true;
+        }
+    };
+
 
     // Constructor
     public ReactionTimerGame(MessagePasser messagePasser, Button button) {
@@ -29,6 +41,10 @@ public class ReactionTimerGame {
         if (gameRunning) {
             gameRunning = false;
             if (!validClick) { // Clicked before color change
+                // http://stackoverflow.com/questions/4378533/cancelling-a-handler-postdelayed-process
+                handler.removeCallbacks(runnable);
+                buttonMessage(button,"Click to restart");
+                buttonColor(button,0xffadd8e6); // LIGHT BLUE
                 messagePasser.createToast("Too early!"); //  TODO: Cancel the timer and color change. ie, go to break state
             } else { // Good reaction time
                 buttonMessage(button,"Click to restart");
@@ -45,18 +61,6 @@ public class ReactionTimerGame {
         buttonColor(button, 0xffff0000); // RED
         buttonMessage(button,"Wait...");
         gameRunning = true;
-
-        // http://www.mopri.de/2010/timertask-bad-do-it-the-android-way-use-a-handler/
-        Handler handler = new Handler();
-        Runnable runnable = new Runnable() {
-            @Override
-            public void run() {
-                buttonColor(button,0xff00ff00); // GREEN
-                buttonMessage(button,"Click!");
-                startTime = SystemClock.elapsedRealtime();
-                validClick = true;
-            }
-        };
         handler.postDelayed(runnable,getRandomNumber());
     }
 

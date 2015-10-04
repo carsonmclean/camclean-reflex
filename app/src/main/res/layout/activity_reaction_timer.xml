@@ -11,6 +11,8 @@
         android:layout_height="fill_parent"
         android:id="@+id/button"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:text="Tap to Start"
+        android:textSize="50dp" />
 
 </RelativeLayout>

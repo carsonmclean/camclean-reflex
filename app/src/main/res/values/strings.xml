@@ -5,7 +5,7 @@
 
     <string name="action_settings">Settings</string>
 
-    <string name="title_activity_two_player">Two Player Game Show Buzzer</string>
-    <string name="title_activity_three_player">Three Player Game Show Buzzer</string>
-    <string name="title_activity_four_player">Four Player Game Show Buzzer</string>
+    <string name="title_activity_two_player">Two Player Buzzer</string>
+    <string name="title_activity_three_player">Three Player Buzzer</string>
+    <string name="title_activity_four_player">Four Player Buzzer</string>
 </resources>
