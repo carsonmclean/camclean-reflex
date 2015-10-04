@@ -31,6 +31,8 @@ public class ReactionTimerGame {
             if (!validClick) { // Clicked before color change
                 messagePasser.createToast("Too early!"); //  TODO: Cancel the timer and color change. ie, go to break state
             } else { // Good reaction time
+                buttonMessage(button,"Click to restart");
+                buttonColor(button,0xffadd8e6); // LIGHT BLUE
                 messagePasser.createToast("Your reaction time was " + reactionTime + " milliseconds.");
             }
         } else { // Game not running, start the game. Gives break between rounds.
@@ -41,6 +43,7 @@ public class ReactionTimerGame {
 
     public void startGame() {
         buttonColor(button, 0xffff0000); // RED
+        buttonMessage(button,"Wait...");
         gameRunning = true;
 
         // http://www.mopri.de/2010/timertask-bad-do-it-the-android-way-use-a-handler/
@@ -49,6 +52,7 @@ public class ReactionTimerGame {
             @Override
             public void run() {
                 buttonColor(button,0xff00ff00); // GREEN
+                buttonMessage(button,"Click!");
                 startTime = SystemClock.elapsedRealtime();
                 validClick = true;
             }
@@ -64,6 +68,11 @@ public class ReactionTimerGame {
 
     public void buttonColor(Button button,int color) {
         button.setBackgroundColor(color);
+    }
+
+    public void buttonMessage(Button button,String message) {
+        button.setText(message);
+        button.setTextSize(50);
     }
 }
 
