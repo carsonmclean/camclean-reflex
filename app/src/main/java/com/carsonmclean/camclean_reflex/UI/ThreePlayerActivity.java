@@ -4,15 +4,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import com.carsonmclean.camclean_reflex.R;
+import com.carsonmclean.camclean_reflex.Utilities.GameShowBuzzer;
+import com.carsonmclean.camclean_reflex.Utilities.MessagePasser;
 
 public class ThreePlayerActivity extends AppCompatActivity {
+    GameShowBuzzer gameShowBuzzer;
+    MessagePasser messagePasser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_three_player);
+
+        messagePasser = new MessagePasser(this);
+        gameShowBuzzer = new GameShowBuzzer(messagePasser);
     }
 
     @Override
@@ -35,5 +44,11 @@ public class ThreePlayerActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    // http://stackoverflow.com/questions/5620772/get-text-from-pressed-button
+    public void onClick3(View view) {
+        Button button = (Button) view;
+        gameShowBuzzer.onClick(button.getText().toString());
     }
 }

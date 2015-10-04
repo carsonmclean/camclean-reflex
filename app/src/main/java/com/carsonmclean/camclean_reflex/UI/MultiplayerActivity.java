@@ -11,14 +11,14 @@ import com.carsonmclean.camclean_reflex.R;
 import com.carsonmclean.camclean_reflex.Utilities.GameShowBuzzer;
 import com.carsonmclean.camclean_reflex.Utilities.MessagePasser;
 
-public class FourPlayerActivity extends AppCompatActivity {
+public class MultiplayerActivity extends AppCompatActivity {
     GameShowBuzzer gameShowBuzzer;
     MessagePasser messagePasser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_four_player);
+        setContentView(R.layout.activity_four_player); // TODO: Implement multiplayer activity class
 
         messagePasser = new MessagePasser(this);
         gameShowBuzzer = new GameShowBuzzer(messagePasser);
@@ -47,7 +47,7 @@ public class FourPlayerActivity extends AppCompatActivity {
     }
 
     // http://stackoverflow.com/questions/5620772/get-text-from-pressed-button
-    public void onClick4(View view) {
+    public void onClick(View view) {
         Button button = (Button) view;
         gameShowBuzzer.onClick(button.getText().toString());
     }
