@@ -44,11 +44,11 @@ public class ReactionTimerGame {
                 // http://stackoverflow.com/questions/4378533/cancelling-a-handler-postdelayed-process
                 handler.removeCallbacks(runnable);
                 buttonMessage(button,"Tap to restart");
-                buttonColor(button,0x889ba28f); // Main Menu Brown
+                buttonColor(button,0x6f69441a); // Main Menu Brown
                 messagePasser.createToast("Too early!"); //  TODO: Cancel the timer and color change. ie, go to break state
             } else { // Good reaction time
                 buttonMessage(button,"Tap to restart");
-                buttonColor(button,0x889ba28f); // Main Menu Brown
+                buttonColor(button,0x6f69441a); // Main Menu Brown
                 messagePasser.createToast("Your reaction time was " + reactionTime + " milliseconds.");
             }
         } else { // Game not running, start the game. Gives break between rounds.

@@ -3,6 +3,6 @@
     <!-- http://stackoverflow.com/questions/2666341/how-to-use-android-gradientdrawable-->
     <gradient
         android:angle="270"
-        android:startColor="#74AFAD"
-        android:endColor="#c1c8b6" />
+        android:startColor="@color/gradientStart"
+        android:endColor="@color/gradientEnd" />
 </shape>

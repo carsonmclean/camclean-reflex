@@ -16,41 +16,41 @@
         <Button
             android:layout_width="fill_parent"
             android:layout_height="1dp"
-            android:id="@+id/button13"
+            android:id="@+id/button3p1"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_weight="1"
             android:onClick="onClick3"
-            android:text="Player 1"
+            android:text="@string/Player1"
             android:textSize="50dp"
-            android:background="#889ba28f"
+            android:background="@color/button"
             android:layout_marginBottom="5dp" />
 
         <Button
             android:layout_width="fill_parent"
             android:layout_height="1dp"
-            android:id="@+id/button14"
+            android:id="@+id/button3p2"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_weight="1"
             android:onClick="onClick3"
-            android:text="Player 2"
+            android:text="@string/Player2"
             android:textSize="50dp"
-            android:background="#889ba28f"
+            android:background="@color/button"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp" />
 
         <Button
             android:layout_width="fill_parent"
             android:layout_height="1dp"
-            android:id="@+id/button15"
+            android:id="@+id/button3p3"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_weight="1"
             android:onClick="onClick3"
-            android:text="Player 3"
+            android:text="@string/Player3"
             android:textSize="50dp"
-            android:background="#889ba28f"
+            android:background="@color/button"
             android:layout_marginTop="5dp" />
     </LinearLayout>
 

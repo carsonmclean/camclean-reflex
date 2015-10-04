@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- http://stackoverflow.com/questions/3769762/android-color-xml-resource-file-->
+    <color name="button">#6f69441a</color>
+
+    <!-- TODO: Figure out how to centralize colors for changing button color-->
+    <color name="timerWait">#60ff0000</color>
+    <color name="timerStop">#6000ff00</color>
+
+    <color name="gradientStart">#66af87</color>
+    <color name="gradientEnd">#c1c8b6</color>
+
+</resources>

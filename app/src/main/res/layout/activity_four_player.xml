@@ -16,28 +16,28 @@
         <Button
             android:layout_width="fill_parent"
             android:layout_height="1dp"
-            android:id="@+id/button9"
+            android:id="@+id/button4p1"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_weight="1"
             android:onClick="onClick4"
-            android:text="Player 1"
+            android:text="@string/Player1"
             android:textSize="50dp"
-            android:background="#889ba28f"
+            android:background="@color/button"
             android:layout_marginBottom="5dp" />
 
 
         <Button
             android:layout_width="fill_parent"
             android:layout_height="1dp"
-            android:id="@+id/button10"
+            android:id="@+id/button4p2"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_weight="1"
             android:onClick="onClick4"
-            android:text="Player 2"
+            android:text="@string/Player2"
             android:textSize="50dp"
-            android:background="#889ba28f"
+            android:background="@color/button"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp" />
 
@@ -45,14 +45,14 @@
         <Button
             android:layout_width="fill_parent"
             android:layout_height="1dp"
-            android:id="@+id/button11"
+            android:id="@+id/button4p3"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_weight="1"
             android:onClick="onClick4"
-            android:text="Player 3"
+            android:text="@string/Player3"
             android:textSize="50dp"
-            android:background="#889ba28f"
+            android:background="@color/button"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp" />
 
@@ -60,14 +60,14 @@
         <Button
             android:layout_width="fill_parent"
             android:layout_height="1dp"
-            android:id="@+id/button12"
+            android:id="@+id/button4p4"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_weight="1"
             android:onClick="onClick4"
-            android:text="Player 4"
+            android:text="@string/Player4"
             android:textSize="50dp"
-            android:background="#889ba28f"
+            android:background="@color/button"
             android:layout_marginTop="5dp" />
     </LinearLayout>
 

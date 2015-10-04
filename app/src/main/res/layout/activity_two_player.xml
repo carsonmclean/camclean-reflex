@@ -16,27 +16,27 @@
         <Button
             android:layout_width="fill_parent"
             android:layout_height="1dp"
-            android:id="@+id/button7"
+            android:id="@+id/button2p1"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_weight="1"
             android:onClick="onClick2"
-            android:text="Player 1"
+            android:text="@string/Player1"
             android:textSize="50dp"
-            android:background="#889ba28f"
+            android:background="@color/button"
             android:layout_marginBottom="5dp" />
 
         <Button
             android:layout_width="fill_parent"
             android:layout_height="1dp"
-            android:id="@+id/button8"
+            android:id="@+id/button2p2"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_weight="1"
             android:onClick="onClick2"
-            android:text="Player 2"
+            android:text="@string/Player2"
             android:textSize="50dp"
-            android:background="#889ba28f"
+            android:background="@color/button"
             android:layout_marginTop="5dp" />
     </LinearLayout>
 
