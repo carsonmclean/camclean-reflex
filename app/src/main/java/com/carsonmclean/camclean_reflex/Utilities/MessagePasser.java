@@ -3,6 +3,7 @@ package com.carsonmclean.camclean_reflex.Utilities;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.view.LayoutInflater;
 import android.widget.Toast;
 
 /**
@@ -33,6 +34,7 @@ public class MessagePasser {
         });
         alertDialog.show();
     }
+
     // http://developer.android.com/guide/topics/ui/notifiers/toasts.html
     public void createToast(String message) {
         Toast toast = Toast.makeText(activity, message, Toast.LENGTH_SHORT);

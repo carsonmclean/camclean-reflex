@@ -39,9 +39,9 @@ public class TwoPlayerActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) { // TODO: Fix all the setting menus. Remove or make use of
-            return true;
-        }
+//        if (id == R.id.action_settings) { // TODO: Fix all the setting menus. Remove or make use of
+//            return true;
+//        }
 
         return super.onOptionsItemSelected(item);
     }
