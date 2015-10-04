@@ -22,7 +22,7 @@ public class ReactionTimerGame {
     Runnable runnable = new Runnable() {
         @Override
         public void run() {
-            buttonColor(button,0xff00ff00); // GREEN
+            buttonColor(button,0x8000ff00); // GREEN
             buttonMessage(button,"Click!");
             startTime = SystemClock.elapsedRealtime();
             validClick = true;
@@ -43,12 +43,12 @@ public class ReactionTimerGame {
             if (!validClick) { // Clicked before color change
                 // http://stackoverflow.com/questions/4378533/cancelling-a-handler-postdelayed-process
                 handler.removeCallbacks(runnable);
-                buttonMessage(button,"Click to restart");
-                buttonColor(button,0xffadd8e6); // LIGHT BLUE
+                buttonMessage(button,"Tap to restart");
+                buttonColor(button,0x889ba28f); // Main Menu Brown
                 messagePasser.createToast("Too early!"); //  TODO: Cancel the timer and color change. ie, go to break state
             } else { // Good reaction time
-                buttonMessage(button,"Click to restart");
-                buttonColor(button,0xffadd8e6); // LIGHT BLUE
+                buttonMessage(button,"Tap to restart");
+                buttonColor(button,0x889ba28f); // Main Menu Brown
                 messagePasser.createToast("Your reaction time was " + reactionTime + " milliseconds.");
             }
         } else { // Game not running, start the game. Gives break between rounds.
@@ -58,7 +58,7 @@ public class ReactionTimerGame {
     }
 
     public void startGame() {
-        buttonColor(button, 0xffff0000); // RED
+        buttonColor(button, 0x80ff0000); // RED
         buttonMessage(button,"Wait...");
         gameRunning = true;
         handler.postDelayed(runnable,getRandomNumber());
