@@ -14,6 +14,7 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:text="Tap to Start"
+        android:textColor="@color/text"
         android:textSize="50dp"
         android:background="@color/button" />
 

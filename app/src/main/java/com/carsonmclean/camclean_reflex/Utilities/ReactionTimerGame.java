@@ -76,6 +76,7 @@ public class ReactionTimerGame {
 
     public void buttonMessage(Button button,String message) {
         button.setText(message);
+        button.setTextColor(0xffffffff);
         button.setTextSize(50);
     }
 }

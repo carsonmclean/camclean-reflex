@@ -22,6 +22,7 @@
             android:layout_weight="1"
             android:onClick="onClick2"
             android:text="@string/Player1"
+            android:textColor="@color/text"
             android:textSize="50dp"
             android:background="@color/button"
             android:layout_marginBottom="5dp" />
@@ -35,6 +36,7 @@
             android:layout_weight="1"
             android:onClick="onClick2"
             android:text="@string/Player2"
+            android:textColor="@color/text"
             android:textSize="50dp"
             android:background="@color/button"
             android:layout_marginTop="5dp" />

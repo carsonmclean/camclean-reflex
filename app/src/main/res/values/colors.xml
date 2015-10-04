@@ -3,6 +3,8 @@
     <!-- http://stackoverflow.com/questions/3769762/android-color-xml-resource-file-->
     <color name="button">#6f69441a</color>
 
+    <color name="text">#FFFFFF</color>
+
     <!-- TODO: Figure out how to centralize colors for changing button color-->
     <color name="timerWait">#60ff0000</color>
     <color name="timerStop">#6000ff00</color>

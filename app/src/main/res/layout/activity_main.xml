@@ -17,7 +17,7 @@
         android:layout_marginLeft="75dp"
         android:background="@color/button"
         android:height="60dp"
-        android:textColor="#FFFFFFFF"
+        android:textColor="@color/text"
         android:textSize="16dp" />
 
     <Button
@@ -31,7 +31,7 @@
         android:layout_marginLeft="75dp"
         android:background="@color/button"
         android:height="60dp"
-        android:textColor="#FFFFFFFF"
+        android:textColor="@color/text"
         android:textSize="16dp" />
 
     <Button
@@ -45,7 +45,7 @@
         android:layout_marginLeft="75dp"
         android:background="@color/button"
         android:height="60dp"
-        android:textColor="#FFFFFFFF"
+        android:textColor="@color/text"
         android:textSize="16dp" />
 
     <Button
@@ -59,7 +59,7 @@
         android:layout_marginLeft="75dp"
         android:background="@color/button"
         android:height="60dp"
-        android:textColor="#FFFFFFFF"
+        android:textColor="@color/text"
         android:textSize="16dp" />
 
     <Button
@@ -73,7 +73,7 @@
         android:layout_marginLeft="75dp"
         android:background="@color/button"
         android:height="60dp"
-        android:textColor="#FFFFFFFF"
+        android:textColor="@color/text"
         android:textSize="16dp" />
 
     <!-- TODO: Get source for PNGs-->
