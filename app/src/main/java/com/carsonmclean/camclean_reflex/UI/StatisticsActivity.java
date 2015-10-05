@@ -57,6 +57,15 @@ public class StatisticsActivity extends AppCompatActivity {
         //  CMPUT 301 Fall 2015 lonelyTwitter Lab Code
         oldReactionsList = (ListView) findViewById(R.id.oldReactionsList);
 
+        adapter = new ArrayAdapter<>(this,
+                R.layout.list_item, reactions);
+        oldReactionsList.setAdapter(adapter);
+        adapter.notifyDataSetChanged(); // data has changed, views that use it should refresh
+
+        reactions.add(9);
+        adapter.notifyDataSetChanged();
+
+
 
     }
 
@@ -84,15 +93,12 @@ public class StatisticsActivity extends AppCompatActivity {
 
 
 //  CMPUT 301 Fall 2015 lonelyTwitter Lab Code
-    @Override
-    protected void onStart() {
-        super.onStart();
-        loadFromFile();
-        adapter = new ArrayAdapter<>(this,
-                R.layout.list_item, reactions);
-        oldReactionsList.setAdapter(adapter);
-        adapter.notifyDataSetChanged(); // data has changed, views that use it should refresh
-    }
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//        loadFromFile();
+//
+//    }
 
 //  CMPUT 301 Fall 2015 lonelyTwitter Lab Code
     private void loadFromFile() {
