@@ -5,6 +5,10 @@ APK
 
 The compiled APK is located in 'app/bin' and is titled 'app-debug.apk'. This will install to an Android phone as 'camclean-reflex'.
 
+UML
+
+The UML diagram is in 'app/doc' and is title 'camclean-reflex UML.png'.
+
 VIDEO
 
 The video is in the 'app/doc' directory and is title 'camclean-reflex video demo'
