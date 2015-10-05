@@ -43,7 +43,7 @@ public class ReactionTimerActivity extends AppCompatActivity {
             }
         });
 
-        reactionTimerGame = new ReactionTimerGame(messagePasser,button);
+        reactionTimerGame = new ReactionTimerGame(messagePasser,button,this);
 
         messagePasser.createDialog("Instructions", "Click the button to start.\n\nClick as fast as you can when the color changes\n\nPress the back button to quit.");
     }
@@ -65,5 +65,11 @@ public class ReactionTimerActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        reactionTimerGame.saveInFile();
     }
 }

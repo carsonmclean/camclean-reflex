@@ -15,10 +15,24 @@
 */
 package com.carsonmclean.camclean_reflex.Utilities;
 
+import android.content.Context;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.widget.Button;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -31,6 +45,10 @@ public class ReactionTimerGame {
     Button button;
     long startTime, reactionTime;
     boolean gameRunning, validClick;
+    Context context;
+    String FILENAME;
+    private ArrayList<Integer> reactions;
+
 
     // http://www.mopri.de/2010/timertask-bad-do-it-the-android-way-use-a-handler/
     Handler handler = new Handler();
@@ -46,9 +64,13 @@ public class ReactionTimerGame {
 
 
     // Constructor
-    public ReactionTimerGame(MessagePasser messagePasser, Button button) {
+    public ReactionTimerGame(MessagePasser messagePasser, Button button, Context context) {
         this.messagePasser = messagePasser;
         this.button = button;
+        this.context = context;
+        FILENAME = "reactionTimerGame.sav";
+        reactions = new ArrayList<>();
+        loadFromFile();
     }
 
     public void onClick() {
@@ -65,6 +87,7 @@ public class ReactionTimerGame {
                 buttonMessage(button,"Tap to restart");
                 buttonColor(button,0x6f69441a); // Main Menu Brown
                 messagePasser.createToast("Your reaction time was " + reactionTime + " milliseconds.");
+                recordReaction((int)reactionTime);
             }
         } else { // Game not running, start the game. Gives break between rounds.
             validClick = false;
@@ -94,5 +117,39 @@ public class ReactionTimerGame {
         button.setTextColor(0xffffffff);
         button.setTextSize(50);
     }
+
+    //  CMPUT 301 Fall 2015 lonelyTwitter Lab Code
+    private void loadFromFile() {
+        try {
+            FileInputStream fis = context.openFileInput(FILENAME);
+            BufferedReader in = new BufferedReader(new InputStreamReader(fis));
+            Gson gson = new Gson();
+//          https://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/Gson.html, 2015/09/24
+            Type listType = new TypeToken<ArrayList<Integer>>() {}.getType();
+            reactions = gson.fromJson(in, listType);
+        } catch (FileNotFoundException e) {
+            reactions = new ArrayList<>();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    //  CMPUT 301 Fall 2015 lonelyTwitter Lab Code
+    public void saveInFile() {
+        try {
+            FileOutputStream fos = context.openFileOutput(FILENAME, 0);
+            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void recordReaction(Integer reaction) {
+        reactions.add(reaction);
+        saveInFile();
+    }
+
 }
 
