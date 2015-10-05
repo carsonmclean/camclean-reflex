@@ -12,4 +12,7 @@
     <string name="Player2">Player 2</string>
     <string name="Player3">Player 3</string>
     <string name="Player4">Player 4</string>
+    <string name="title_activity_statistics">StatisticsActivity</string>
+
+    <string name="hello_world">Hello world!</string>
 </resources>

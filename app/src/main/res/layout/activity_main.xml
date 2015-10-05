@@ -67,7 +67,7 @@
         android:layout_height="wrap_content"
         android:text="Statistics"
         android:id="@+id/button6"
-        android:onClick="startReactionTimer"
+        android:onClick="startStatistics"
         android:layout_alignParentTop="true"
         android:layout_marginTop="420dp"
         android:layout_marginLeft="75dp"

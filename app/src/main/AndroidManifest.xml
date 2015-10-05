@@ -44,6 +44,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.carsonmclean.camclean_reflex.UI.MainActivity" />
         </activity>
+        <activity
+            android:name=".UI.StatisticsActivity"
+            android:label="@string/title_activity_statistics"
+            android:parentActivityName=".UI.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.carsonmclean.camclean_reflex.UI.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
