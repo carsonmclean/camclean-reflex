@@ -25,7 +25,7 @@ import android.widget.Button;
 import com.carsonmclean.camclean_reflex.R;
 import com.carsonmclean.camclean_reflex.Utilities.MessagePasser;
 import com.carsonmclean.camclean_reflex.Utilities.ReactionTimerGame;
-
+// Activity for the reaction timer game
 public class ReactionTimerActivity extends AppCompatActivity {
     private ReactionTimerGame reactionTimerGame;
     private MessagePasser messagePasser = new MessagePasser(this);
@@ -35,8 +35,8 @@ public class ReactionTimerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reaction_timer);
 
-        // http://stackoverflow.com/questions/16636752/android-button-onclicklistener
-        final Button button = (Button) findViewById(R.id.button); // TODO: Start button as a color?
+        // Nikhil Agrawal; http://stackoverflow.com/questions/16636752/android-button-onclicklistener; 2015-10-03
+        final Button button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 reactionTimerGame.onClick();

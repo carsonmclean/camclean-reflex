@@ -31,7 +31,7 @@ public class MessagePasser {
     private Activity activity;
 
     // Constructor
-    // http://stackoverflow.com/questions/3572463/what-is-context-in-android
+    // Sameer Segal; http://stackoverflow.com/questions/3572463/what-is-context-in-android; 2015-10-03
     // When calling Constructor in an Activity class, pass 'this' as argument to get Context
     public MessagePasser(Activity activity) {
         this.activity = activity;
@@ -50,7 +50,7 @@ public class MessagePasser {
         alertDialog.show();
     }
 
-    // http://developer.android.com/guide/topics/ui/notifiers/toasts.html
+    // http://developer.android.com/guide/topics/ui/notifiers/toasts.html; 2015-10-03
     public void createToast(String message) {
         Toast toast = Toast.makeText(activity, message, Toast.LENGTH_SHORT);
         toast.show();

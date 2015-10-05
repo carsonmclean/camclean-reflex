@@ -26,7 +26,7 @@ import android.widget.Button;
 import com.carsonmclean.camclean_reflex.R;
 import com.carsonmclean.camclean_reflex.Utilities.GameShowBuzzer;
 import com.carsonmclean.camclean_reflex.Utilities.MessagePasser;
-
+// Activity for four person buzzer game
 public class FourPlayerActivity extends AppCompatActivity {
     GameShowBuzzer gameShowBuzzer;
     MessagePasser messagePasser;
@@ -62,7 +62,8 @@ public class FourPlayerActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    // http://stackoverflow.com/questions/5620772/get-text-from-pressed-button
+    // Heiko Rupp, Amy; http://stackoverflow.com/questions/5620772/get-text-from-pressed-button; 2015-10-04
+    //
     public void onClick4(View view) {
         Button button = (Button) view;
         gameShowBuzzer.onClick(button.getText().toString());

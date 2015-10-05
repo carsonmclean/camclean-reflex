@@ -21,7 +21,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.carsonmclean.camclean_reflex.R;
-
+// Activity for showing Statistics. Did not go well with GSON and loading files...
 public class StatisticsActivity extends AppCompatActivity {
 
     @Override

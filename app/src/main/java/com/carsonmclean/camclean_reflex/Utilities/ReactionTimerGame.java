@@ -32,7 +32,7 @@ public class ReactionTimerGame {
     long startTime, reactionTime;
     boolean gameRunning, validClick;
 
-    // http://www.mopri.de/2010/timertask-bad-do-it-the-android-way-use-a-handler/
+    // Moritz; http://www.mopri.de/2010/timertask-bad-do-it-the-android-way-use-a-handler/; 2015-10-04
     Handler handler = new Handler();
     Runnable runnable = new Runnable() {
         @Override
@@ -56,7 +56,7 @@ public class ReactionTimerGame {
         if (gameRunning) {
             gameRunning = false;
             if (!validClick) { // Clicked before color change
-                // http://stackoverflow.com/questions/4378533/cancelling-a-handler-postdelayed-process
+                // Varun; http://stackoverflow.com/questions/4378533/cancelling-a-handler-postdelayed-process; 2015-10-04
                 handler.removeCallbacks(runnable);
                 buttonMessage(button,"Tap to restart");
                 buttonColor(button,0x6f69441a); // Main Menu Brown
@@ -79,7 +79,7 @@ public class ReactionTimerGame {
         handler.postDelayed(runnable,getRandomNumber());
     }
 
-    // http://stackoverflow.com/questions/363681/generating-random-integers-in-a-range-with-java
+    // Greg Case; http://stackoverflow.com/questions/363681/generating-random-integers-in-a-range-with-java; 2015-10-03
     public long getRandomNumber() {
         Random random = new Random();
         return (random.nextInt(2000 - 10) + 10); // TODO: Check this gives proper range

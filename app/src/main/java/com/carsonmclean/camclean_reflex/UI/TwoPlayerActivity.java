@@ -53,15 +53,10 @@ public class TwoPlayerActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-//        if (id == R.id.action_settings) { // TODO: Fix all the setting menus. Remove or make use of
-//            return true;
-//        }
-
         return super.onOptionsItemSelected(item);
     }
 
-    // http://stackoverflow.com/questions/5620772/get-text-from-pressed-button
+    // Zsombor Erdődy-Nagy; http://stackoverflow.com/questions/5620772/get-text-from-pressed-button; 2015-10-04
     public void onClick2(View view) {
         Button button = (Button) view;
         gameShowBuzzer.onClick(button.getText().toString());

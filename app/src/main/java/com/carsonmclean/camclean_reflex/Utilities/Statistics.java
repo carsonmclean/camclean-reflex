@@ -19,4 +19,10 @@ package com.carsonmclean.camclean_reflex.Utilities;
  * Created by carsonmclean on 4/10/15.
  */
 public class Statistics {
+    /*
+        This was supposed to be the class where I was going to control everything related to Statistics
+        Despite using the lonelyTwitter example for a number of hours, I could not get the file loading
+        and saving to work, this the Statistics were never implemented. There is a branch on Git with
+        some of my attempt...
+     */
 }

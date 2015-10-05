@@ -23,7 +23,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.carsonmclean.camclean_reflex.R;
-
+// First menu player sees after launching app
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    // Below here are all the methods which create Intents to start other Activities
     public void startReactionTimer(View view) {
         Intent intent = new Intent(this,ReactionTimerActivity.class);
         startActivity(intent);
