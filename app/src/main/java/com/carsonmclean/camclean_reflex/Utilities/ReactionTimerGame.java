@@ -60,7 +60,7 @@ public class ReactionTimerGame {
                 handler.removeCallbacks(runnable);
                 buttonMessage(button,"Tap to restart");
                 buttonColor(button,0x6f69441a); // Main Menu Brown
-                messagePasser.createToast("Too early!"); //  TODO: Cancel the timer and color change. ie, go to break state
+                messagePasser.createToast("Too early!");
             } else { // Good reaction time
                 buttonMessage(button,"Tap to restart");
                 buttonColor(button,0x6f69441a); // Main Menu Brown
